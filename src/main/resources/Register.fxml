@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<StackPane prefHeight="300" prefWidth="400" style="-fx-background-color: linear-gradient(to bottom, #1e3c72, #2a5298);" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.RegisterController">
+    <VBox alignment="CENTER" spacing="20" style="-fx-padding: 30;">
+        <!-- Título -->
+        <Label style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-effect: dropshadow(gaussian, black, 5, 0.5, 0, 2);" text="Registro de Estudiante">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.27314814925193787" green="0.5517746806144714" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.3336988389492035" green="0.8684210777282715" blue="0.4762914180755615" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill></Label>
+
+        <!-- Formulario -->
+        <GridPane alignment="CENTER" hgap="20" vgap="15">
+            <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" />
+                <ColumnConstraints halignment="LEFT" />
+            <ColumnConstraints halignment="LEFT" />
+            </columnConstraints>
+
+            <!-- Nombre -->
+            <Label text="Nombre:" textFill="#ffffff" />
+            <TextField fx:id="txtNombre" promptText="Nombre" style="-fx-background-color: #ffffff; -fx-text-fill: #2c3e50; -fx-border-radius: 10; -fx-background-radius: 10;" />
+
+            <!-- Apellido -->
+            <Label text="Apellido:" textFill="#ffffff" GridPane.rowIndex="1" />
+            <TextField fx:id="txtApellido" promptText="Apellido" style="-fx-background-color: #ffffff; -fx-text-fill: #2c3e50; -fx-border-radius: 10; -fx-background-radius: 10;" GridPane.rowIndex="1" />
+
+            <!-- Edad -->
+            <Label text="Edad:" textFill="#ffffff" GridPane.rowIndex="2" />
+            <TextField fx:id="txtEdad" promptText="Edad" style="-fx-background-color: #ffffff; -fx-text-fill: #2c3e50; -fx-border-radius: 10; -fx-background-radius: 10;" GridPane.rowIndex="2" />
+
+            <!-- Género -->
+            <Label text="Género:" textFill="#ffffff" GridPane.rowIndex="3" />
+            <ComboBox fx:id="comboBoxGenero" promptText="Genero" style="-fx-background-color: #ffffff; -fx-border-radius: 10; -fx-background-radius: 10;" GridPane.rowIndex="3" />
+
+            <!-- Carrera -->
+            <Label text="Carrera:" textFill="#ffffff" GridPane.rowIndex="4" />
+            <ComboBox fx:id="comboBoxCarrera" promptText="Carrera" style="-fx-background-color: #ffffff; -fx-border-radius: 10; -fx-background-radius: 10;" GridPane.rowIndex="4" />
+
+            <!-- Semestre -->
+            <Label text="Semestre:" textFill="#ffffff" GridPane.rowIndex="5" />
+            <ComboBox fx:id="comboBoxSemestre" promptText="Semestre" style="-fx-background-color: #ffffff; -fx-border-radius: 10; -fx-background-radius: 10;" GridPane.rowIndex="5" />
+
+            <!-- Fecha de ingreso -->
+            <Label text="Fecha de ingreso:" textFill="#ffffff" GridPane.rowIndex="6" />
+            <TextField fx:id="txtFechaIngreso" promptText="Fecha de ingreso" style="-fx-background-color: #ffffff; -fx-text-fill: #2c3e50; -fx-border-radius: 10; -fx-background-radius: 10;" GridPane.rowIndex="6" />
+
+            <!-- Foto -->
+            <Label text="Foto:" textFill="#ffffff" GridPane.rowIndex="7" />
+            <TextField fx:id="txtFoto" promptText="Foto" style="-fx-background-color: #ffffff; -fx-text-fill: #2c3e50; -fx-border-radius: 10; -fx-background-radius: 10;" GridPane.rowIndex="7" />
+
+           <!-- Botón Guardar -->
+           <Button onAction="#buscarFoto" prefHeight="48.0" prefWidth="112.0" style="-fx-background-color: linear-gradient(to right, #41b000, #96c93d); -fx-text-fill: #ffffff; -fx-font-size: 16px; -fx-font-weight: bold; -fx-border-radius: 20; -fx-background-radius: 20; -fx-padding: 10 20;" text="Buscar📎" GridPane.columnIndex="2" GridPane.rowIndex="7">
+            <font>
+               <Font size="23.0" />
+            </font>
+         </Button>
+         <DatePicker GridPane.rowIndex="6" />
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+         </rowConstraints>
+        </GridPane>
+      <Button onAction="#matricularEstudiante" style="-fx-background-color: linear-gradient(to right, #00b09b, #96c93d); -fx-text-fill: #ffffff; -fx-font-size: 16px; -fx-font-weight: bold; -fx-border-radius: 20; -fx-background-radius: 20; -fx-padding: 10 20;" text="Matricularse" />
+        <Button text="Ver Estudiantes" onAction="#verEstudiantes" layoutX="10" layoutY="300" />
+    </VBox>
+</StackPane>
